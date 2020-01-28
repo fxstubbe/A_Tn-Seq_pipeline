@@ -17,10 +17,24 @@ library(patchwork)
 # 1) Paths and Inputs
 # -------------------------------- #
 
-Data <- read_delim("/Users/carlo/Desktop/Eme/Output/full_pos.txt", delim = "\t")
-gff <- read_csv("/Users/carlo/Desktop/Eme/Data/Melitensis16M_gene_table_v3.csv")
+# Parameters
+boundaries <- 200
+S_factor <- 10
+rWindow <- 100
 
-chromosomes <- list.files(path = "/Users/carlo/Desktop/Eme/Output/", pattern = "R200.txt")
+#File structure
+p.main <- "/Users/carlo/Desktop/Eme/"
+p.output <- paste(p.main, "Output/", sep = "")
+p.chromo <- paste(p.main, "Output/Chromosomes/", sep = "")
+p.table <- paste(p.main, "Output/Tables/", sep = "")
+p.rFile <- paste(p.main, "Output/Tables/R", rWindow,"/",sep = "")
+p.Graphs <- paste(p.main, "Output/Graphs/", sep = "")
+
+#Data
+Data <- read_delim("/Users/carlo/Desktop/Eme/Output/Tables/full_pos.txt", delim = "\t")
+gff <- read_csv("/Users/carlo/Desktop/Eme/Data/Melitensis16M_gene_table_v3.csv")
+chromosomes <- list.files(path = p.rFile)
+
 
 # 2) Fucntions
 # -------------------------------- #
@@ -36,15 +50,11 @@ splitWithOverlap <- function(vec, seg.length, overlap) {
 
 # 2) Get a gene
 # -------------------------------- #
-# Graph Boundaries
-boundaries <- 200
-#Plot_by
-S_factor <- 10
 
 for(Chx in chromosomes){
   
-  df <- read_delim(paste("/Users/carlo/Desktop/Eme/Output/", Chx, sep=''), delim = "\t")
-  dir.create(paste("/Users/carlo/Desktop/Eme/Output/Graphs/", Chx %>% str_remove(".txt"),sep =""))
+  df <- read_delim(paste(p.rFile, Chx, sep=''), delim = "\t")
+  dir.create(paste(p.Graphs, Chx %>% str_remove(".txt"),sep =""))
   
   for(Gene in df$New_locus){
 
@@ -73,7 +83,7 @@ for(Chx in chromosomes){
       geom_line(color = "firebrick", size = 0.7) +
       labs(x = "", y = "Log10", caption = paste("Genomic locus + ",boundaries," nt neighborhood",sep = "")) +
       ylim(c(0, 5))  +
-      geom_vline(xintercept = 20, linetype="dashed", 
+      geom_vline(xintercept = (boundaries/S_factor), linetype="dashed", 
                  color = "grey40", size=0.8) + 
       geom_vline(xintercept = nrow(Data_gene) - 20, linetype="dashed", 
                  color = "grey40", size=0.8) +
@@ -121,7 +131,7 @@ for(Chx in chromosomes){
     p_full <- p1+p2 / p3
     p_full <- wrap_elements(p_full) + ggtitle(paste(Gene," | ",gff$Product[idx], " | Orientation ", gff$strand[idx] , sep=""))  
     
-    pdf(paste("/Users/carlo/Desktop/Eme/Output/Graphs/", Chx %>% str_remove(".txt"),"/", Gene ,".pdf", sep = ""), width = 15, height = 4)
+    pdf(paste(p.Graphs, Chx %>% str_remove(".txt"),"/", Gene ,".pdf", sep = ""), width = 15, height = 4)
     print(p_full)
     dev.off()
     
