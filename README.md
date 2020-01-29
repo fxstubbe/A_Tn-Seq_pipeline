@@ -8,10 +8,13 @@ Transposon sequencing requires the creation of a transposon insertion library, w
 
 - Burrows Wheeler Aligner ([BWA][bwa])
 - [Samtools][samtools]
-- R (tidyverse, data.table, patchwork)
+- R ([tidyverse][tidy], [data.table][d.table], [patchwork][patch])
 
 [bwa]: https://sourceforge.net/projects/bio-bwa/files/
 [samtools]: http://www.htslib.org/
+[tidy]: https://www.tidyverse.org/
+[d.table]: https://github.com/Rdatatable/data.table
+[patch]: https://github.com/thomasp85/patchwork
 
 **Input Data**
 
@@ -46,6 +49,7 @@ Arguments :
 The BWA-MEM algorithm performs local alignment. It may produce multiple primary alignments for different part of a query sequence. This is a crucial feature for long sequences. However, some tools such as Picard’s markDuplicates does not work with split alignments. One may consider to use option -M to flag shorter split hits as secondary
 
 **Single-end**
+
 ```
 bwa mem [-t nThreads] <db.prefix> <reads.fq> > <output.sam>
 ```
@@ -61,19 +65,33 @@ Arguments :
 - `-t` (INT) : Number of threads
 - `<db.prefix>` : Index database outputed at the previous step (**Make a Genomic Index**) 
 - `<Reads.fq>` : Sequencing Reads (F1, F2 if paired-end)
-- `<output.sam>` : Reference genome 
+- `<output.sam>` : Name of the output alignment file (ex: L001_R2.sam) 
 
-For additionnal informations, see [BWA Manual][ref].
+For additionnal informations, see [BWA Manual][bwa_manual].
 
-[ref]: http://bio-bwa.sourceforge.net/bwa.shtml
+[bwa_manual]: http://bio-bwa.sourceforge.net/bwa.shtml
 
-### Sort alignment files
+### Location and Abundance of transposon insertions 
+
+**Sort SAM files**
+
+Sort alignments by leftmost coordinates 
 
 ```
 samtools sort [-@ nThreads] [-o Output file] <input.sam>
 ```
 
-paste("samtools sort -@ 4 -o sorted_", str_replace(sam_f, ".sam", ".bam")," ", sam_f, sep = "")
+Arguments : 
+
+- `-@` (INT) : Number of threads
+- `-o` (INT) : Name of the output (ex: L001_sorted_R2.bam)
+- `<input.sam>` : SAM file to sort (Generated at the previous step **Genome Alignment**)
+
+
+**Merge BAM files**
+
+
+**Get coverage**
 
 
 ### Convert GFF to human readable table
