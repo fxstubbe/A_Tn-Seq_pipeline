@@ -11,7 +11,7 @@ Transposon sequencing requires the creation of a transposon insertion library, w
 - R (tidyverse, data.table, patchwork)
 
 [bwa]: https://sourceforge.net/projects/bio-bwa/files/
-[samtools] : http://www.htslib.org/
+[samtools]: http://www.htslib.org/
 
 **Input Data**
 
