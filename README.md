@@ -27,7 +27,7 @@ Transposon sequencing requires the creation of a transposon insertion library, w
 
 To determine the location and abundance of each transposon insertion, short sequencing reads are mapped to a reference genome. This allows to identify the 'correct' genomic loci from which the read originated. 
 
-**Make a Genomic Index**
+### Make a Genomic Index
 
 Read alignment by BWA uses an FM-index (Full-text index in Minute space) of the reference genome. Both single and paired read libraries are supported. The bwtsw algorithm should be used for short (<100bp) sequencing reads. 
 
@@ -41,7 +41,7 @@ Arguments :
 - `-a`(STR) : Algorithm for constructing BWT index. Are available **is** and **bwtsw** (recommemded)
 - `<genome.fasta>` : Reference genome 
 
-**Genome Alignment**
+### Genome Alignment
 
 The BWA-MEM algorithm performs local alignment. It may produce multiple primary alignments for different part of a query sequence. This is a crucial feature for long sequences. However, some tools such as Picard’s markDuplicates does not work with split alignments. One may consider to use option -M to flag shorter split hits as secondary
 
@@ -66,7 +66,7 @@ For additionnal informations, see [BWA Manual][ref].
 
 [ref]: http://bio-bwa.sourceforge.net/bwa.shtml
 
-**Sort alignment files**
+### Sort alignment files
 
 ```
 samtools sort [-@ nThreads] [-o Output file] <input.sam>
