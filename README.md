@@ -6,7 +6,7 @@ Transposon sequencing requires the creation of a transposon insertion library, w
 
 **Software requirements**
 
-- Burrows Wheeler Aligner ([BWA][bwa])
+- [Burrows Wheeler Aligner][bwa]
 - [Samtools][samtools]
 - [Qualimap][quali]
 - R ([tidyverse][tidy], [data.table][d.table], [patchwork][patch])
