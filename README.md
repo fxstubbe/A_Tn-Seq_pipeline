@@ -2,6 +2,10 @@
 
 ### Download Reference genome (FASTA) and annotation (GFF) file
 
+```
+$ npm install --save @github/include-fragment-element
+```
+
 ### Convert GFF to human readable table
 
 ### Make a genome index
