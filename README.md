@@ -114,7 +114,7 @@ Arguments :
 - `-f` (FILE) : Use the BAM files specified in the FILE (a file of filenames, one file per line)
 - `-o` (STR) : Name of the output file (ex: L001_coverage.txt)
 
-Output table : 
+Exemple of Output table : 
 
 Chromosome      | Coordinates                        | Coverage
 ---            | ---                            | ---
