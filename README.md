@@ -6,9 +6,12 @@ Transposon sequencing requires the creation of a transposon insertion library, w
 
 **Software requirements**
 
-- Burrows Wheeler Aligner (BWA)
-- Samtools
+- Burrows Wheeler Aligner ([BWA][bwa])
+- [Samtools][samtools]
 - R (tidyverse, data.table, patchwork)
+
+[bwa]: https://sourceforge.net/projects/bio-bwa/files/
+[samtools] : http://www.htslib.org/
 
 **Input Data**
 
@@ -58,6 +61,18 @@ Arguments :
 - `<db.prefix>` : Index database outputed at the previous step (**Make a Genomic Index**) 
 - `<Reads.fq>` : Sequencing Reads (F1, F2 if paired-end)
 - `<output.sam>` : Reference genome 
+
+For additionnal informations, see [BWA][ref].
+[ref]: http://bio-bwa.sourceforge.net/bwa.shtml
+
+**Sort alignment files**
+
+```
+samtools sort [-@ nThreads] [-o Output file] <input.sam>
+```
+
+paste("samtools sort -@ 4 -o sorted_", str_replace(sam_f, ".sam", ".bam")," ", sam_f, sep = "")
+
 
 ### Convert GFF to human readable table
 
