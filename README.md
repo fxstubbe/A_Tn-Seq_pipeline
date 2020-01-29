@@ -126,3 +126,47 @@ II          | 1917                    |  98
 II          | 1918                    |  98
 
 ## The sliding window strategy
+
+### Convert annotation (.gff) to a readble table
+
+**Script** : gff_converter.R
+
+
+### Compute an essentiallity index
+
+To assess for essentiality of a gene, a sliding window we used a sliding window approach. Instead of counting insertions in genes, we count insertions in overlapping windows of a fixed size.
+
+**Script** : TN_Seq02_sliding_window.R
+
+**User defimed parameters**  
+
+- `rWindow` : Sized of the sliding window
+- `rSliding` : Sliding window shift
+
+**Method** 
+
+1)The coverage file and the converted GFF files are loaded into R.  
+
+2) The coverage file is splitted into chromosomes, which are processed individually.
+
+3)The coverage file is split into coordinates windows matching the `rWindow` and `rSliding` parameters. For exemple, with a rWindow of 200 and a rsliding of 5, a genome of length 3 278 307 bp is into 655,662 windows. 
+
+4) For each window the sum of aligned reads (coverage) is computed. The logarithm in base 10 is computed for the sum.
+
+5) Each annotated gene in the converted GFF file is assigned an essentiallity index. The index corresponds to the number of empty (0 insertion) window overlaping (even by 1 nt) the annotated gene. If there are no empty window overlapping a given gene (essentiallity index = 0), the gene is skipped.
+
+6) For each chromosome, a file containing a list of potentially essential genes (essentiallity index > 0) is created
+
+### Make graphs
+
+**Script** : TN_Seq02_sliding_window.R
+
+The script requires the coverage file and the list of potentially essential genes
+
+**User defimed parameters**  
+
+- `boundaries` : Number of nucleotides to represent in the upstream and downstream region of a given gene
+- `S_factor` : Smoothing factor (size of average positions to plot) 
+- `rWindow` : Size of window used to generate the list (used to read the good set of files)
+
+**Output example** 
