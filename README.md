@@ -160,9 +160,9 @@ To assess for essentiality of a gene, we used a sliding window approach. Instead
 
 **Script** : Sliding_window.R
 
-**User defimed parameters**  
+**User defined parameters**  
 
-- `rWindow` : Sized of the sliding window
+- `rWindow` : Size of the sliding window
 - `rSliding` : Sliding window shift
 
 **Method** 
