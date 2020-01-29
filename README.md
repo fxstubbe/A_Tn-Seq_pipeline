@@ -202,6 +202,11 @@ The scripts require the coverage file and the list of potentially essential gene
 
 **Working on it!**
 
+Idea : 
+1. Compute for each gene : (read Count)/gene length. Add parameter allowing the exclusion of 5,10,15 or 20 % from both end
+2. Plot bimodal distribution and fit model to find pit
+3. Classify essentiality based on the peaks
+
 Each gene is assigned a value equal to the count of reads or unique insertions mapped to this gene, divided by the length of the gene.
 
 If the insertions/reads are distributed randomly throughout the genome the density of insertions is expected to be approximately equal for all genes (apart from random variance).
