@@ -84,24 +84,43 @@ samtools sort [-@ nThreads] [-o Output file] <input.sam>
 Arguments : 
 
 - `-@` (INT) : Number of threads
-- `-o` (INT) : Name of the output (ex: L001_sorted_R2.bam)
+- `-o` (STR) : Name of the output (ex: L001_sorted_R2.bam)
 - `<input.sam>` : SAM file to sort (Generated at the previous step **Genome Alignment**)
 
 
 **Merge BAM files**
 
+Merge aligned (**same** genome) and sorted reads into a single alignment file
+
+```
+samtools merge [-@ nThreads] [-b list.txt] <output.bam>
+```
+
+Arguments : 
+
+- `-@` (INT) : Number of threads
+- `-b` (FILE) : List containing path to the sorted BAM files to merge
+- `<onput.sam>` : Name of the output BAM file (ex: L001_merged.bam)
+
 
 **Get coverage**
 
+```
+samtools depth [-a] [-f merged_file.bam] [-o <FILE.txt>]
+```
 
-### Convert GFF to human readable table
+Arguments : 
+- `-a` : Output all positions (including those with zero depth)
+- `-f` (FILE) : Use the BAM files specified in the FILE (a file of filenames, one file per line)
+- `-o` (STR) : Name of the output file (ex: L001_coverage.txt)
 
-### Make a genome index
+Output table : 
 
-### BAM generation using SamTools
-
-### Get coverage by nt and export in .txt format
-
-### Find essential genes using a sliding window strategy
-
-### Graph generation for essential genes
+Chromosome      | Coordinates                        | Coverage
+---            | ---                            | ---
+I          | 1                     |  0
+I          | 2                    |  0
+I          | 3                    |  117
+...          | ...                   |  ...
+II          | 1917                    |  98
+II          | 1918                    |  98
