@@ -16,7 +16,8 @@ Transposon sequencing requires the creation of a transposon insertion library, w
 [tidy]: https://www.tidyverse.org/
 [d.table]: https://github.com/Rdatatable/data.table
 [patch]: https://github.com/thomasp85/patchwork
-[quali] : http://qualimap.bioinfo.cipf.es/
+[quali]: http://qualimap.bioinfo.cipf.es/
+
 **Input Data**
 
 - A reference genome (.fasta) and it's annotation file (.gff). Genomes can be downloaded on [NCBI][ncbi], see [Melitensis 16M][Melitensis_16M] for an exemple.
