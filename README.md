@@ -62,7 +62,8 @@ Arguments :
 - `<Reads.fq>` : Sequencing Reads (F1, F2 if paired-end)
 - `<output.sam>` : Reference genome 
 
-For additionnal informations, see [BWA][ref].
+For additionnal informations, see [BWA Manual][ref].
+
 [ref]: http://bio-bwa.sourceforge.net/bwa.shtml
 
 **Sort alignment files**
