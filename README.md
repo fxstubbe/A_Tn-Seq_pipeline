@@ -136,7 +136,7 @@ II          | 1918                    |  98
 
 To assess for essentiality of a gene, a sliding window we used a sliding window approach. Instead of counting insertions in genes, we count insertions in overlapping windows of a fixed size.
 
-**Script** : TN_Seq02_sliding_window.R
+**Script** : Sliding_window.R
 
 **User defimed parameters**  
 
@@ -157,17 +157,19 @@ To assess for essentiality of a gene, a sliding window we used a sliding window 
 
 6) For each chromosome, a file containing a list of potentially essential genes (essentiallity index > 0) is created
 
-### Make graphs
+### Make coverage graphs
 
-**Script** : TN_Seq02_sliding_window.R
+**Script** : Automated_Cgrpahs.R
+**Script** : Locus_Plots.R
 
-The script requires the coverage file and the list of potentially essential genes
+The scripts require the coverage file and the list of potentially essential genes
 
 **User defimed parameters**  
 
 - `boundaries` : Number of nucleotides to represent in the upstream and downstream region of a given gene
 - `S_factor` : Smoothing factor (size of average positions to plot) 
-- `rWindow` : Size of window used to generate the list (used to read the good set of files)
+- `rWindow` (AUTOMATED): Size of window used to generate the list (used to read the good set of files)
+- `Gene` (LOCUS PLOT) : Locus (from converted GFF) to plot 
 
 **Output example** 
 
