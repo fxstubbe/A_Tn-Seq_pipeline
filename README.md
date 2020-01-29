@@ -124,3 +124,5 @@ I          | 3                    |  117
 ...          | ...                   |  ...
 II          | 1917                    |  98
 II          | 1918                    |  98
+
+## The sliding window strategy
