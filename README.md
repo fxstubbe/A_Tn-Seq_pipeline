@@ -196,3 +196,22 @@ The scripts require the coverage file and the list of potentially essential gene
 **Output example** 
 
 ![](https://user-images.githubusercontent.com/43237088/73352315-2237e100-4291-11ea-9353-d1c435a9c44b.png)
+
+
+## The insertion density approach
+
+**Working on it!**
+
+Each gene is assigned a value equal to the count of reads or unique insertions mapped to this gene, divided by the length of the gene.
+
+If the insertions/reads are distributed randomly throughout the genome the density of insertions is expected to be approximately equal for all genes (apart from random variance).
+
+However, the empirical distribution of insertion densities among different genes is generally bimodal, separating non-essential genes that are not affected or only weakly affected by selection from essential or advantageous genes that feature low insertion densities due to selective elimination of the corresponding mutants.
+
+The point separating the two peaks in the distribution can be used as a cutoff value where genes with lower insertion densities are considered essential whereas genes with higher insertion densities are assigned putative non-essential status. Although this approach can be seen as problematic because it compares insertion densities among genes of varying sizes while ignoring the fact that random variance in insertion densities is higher for smaller genes, it has been successfully used in situations where the insertion densities are high, that is, for mutant libraries with a high level of saturation [10,11].
+
+existing methods
+
+10.As the number of insertion sites for any gene is dependent upon the gene length, the values were made comparable by dividing the number of insertion sites by the gene length to give an “insertion index” for each gene. The distribution of insertion indices is bimodal, corresponding to the essential (mode at 0) and nonessential models. For the original mutant pool and each passage condition, we fitted gamma distributions for the two modes using the R MASS library (http://www.r-project.org). Log2-likelihood ratios (LR) were calculated between the essential and nonessential models for each condition and we called a gene essential if it had a log2-LR of less than −2, indicating it was at least four times more likely according to the essential model than the nonessential model. Genes were assigned “nonessential,” if they had a log2-LR of greater than 2. 
+
+11. An analysis similar to that performed for S. typhi, which used transposon density, was utilized (Langridge et al., 2009). There were two complicating factors in using transposon density in this study. First, determination of ORFs in these organisms was performed by auto‐annotation and very often had incorrect start sites. Many genes were seen that had a large number of transposon insertions at the 5′ end, but very few insertions in the bulk of the coding sequence. Second, many essential genes can tolerate insertions in the 3′ portion of the coding region, producing a truncated, but partially functional gene product. To compensate for these issues, 5%, 10%, 15% and 20% of the coding sequence from both the 5′ end and 3′ end of each ORF was disregarded in calculating transposon density. Excluding 20% from each end of genes from the analysis provided the best distinction between essential and non‐essential genes. The transposon density for the internal 60% of each ORF was calculated and plotted on a histogram. While the histogram produced an essential gene peak and a non‐essential gene peak, the area between the peaks was more extensive and contained a large number of unresolved genes. Internal transposon densities were subjected to Ward's clustering analysis to categorize genes as essential, non‐essential and unresolved. 
