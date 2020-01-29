@@ -149,7 +149,7 @@ To assess for essentiality of a gene, a sliding window we used a sliding window 
 
 2) The coverage file is splitted into chromosomes, which are processed individually.
 
-3) The coverage file is split into coordinates windows matching the `rWindow` and `rSliding` parameters. For exemple, with a rWindow of 200 and a rsliding of 5, a genome of length 3 278 307 bp is into 655,662 windows. 
+3) The coverage file is split into coordinates windows matching the `rWindow` and `rSliding` parameters. For exemple, with a rWindow of 200 and a rsliding of 5, a genome of length 3 278 307 bp is split into 655,662 windows. 
 
 4) For each window the sum of aligned reads (coverage) is computed. The logarithm in base 10 is computed for the sum.
 
