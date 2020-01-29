@@ -170,3 +170,4 @@ The script requires the coverage file and the list of potentially essential gene
 - `rWindow` : Size of window used to generate the list (used to read the good set of files)
 
 **Output example** 
+![alt text](https://github.com/fxstubbe/A-Tn-Seq-pipeline/blob/master/Exemple/BME_RS11345.pdf)
