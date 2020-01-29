@@ -134,7 +134,7 @@ II          | 1918                    |  98
 
 ### Compute an essentiallity index
 
-To assess for essentiality of a gene, a sliding window we used a sliding window approach. Instead of counting insertions in genes, we count insertions in overlapping windows of a fixed size.
+To assess for essentiality of a gene, we used a sliding window approach. Instead of counting insertions in genes, we count insertions in overlapping windows of a fixed size.
 
 **Script** : Sliding_window.R
 
