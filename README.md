@@ -8,6 +8,7 @@ Transposon sequencing requires the creation of a transposon insertion library, w
 
 - Burrows Wheeler Aligner ([BWA][bwa])
 - [Samtools][samtools]
+- [Qualimap][quali]
 - R ([tidyverse][tidy], [data.table][d.table], [patchwork][patch])
 
 [bwa]: https://sourceforge.net/projects/bio-bwa/files/
@@ -15,7 +16,7 @@ Transposon sequencing requires the creation of a transposon insertion library, w
 [tidy]: https://www.tidyverse.org/
 [d.table]: https://github.com/Rdatatable/data.table
 [patch]: https://github.com/thomasp85/patchwork
-
+[quali] : http://qualimap.bioinfo.cipf.es/
 **Input Data**
 
 - A reference genome (.fasta) and it's annotation file (.gff). Genomes can be downloaded on [NCBI][ncbi], see [Melitensis 16M][Melitensis_16M] for an exemple.
@@ -99,7 +100,24 @@ Arguments :
 
 - `-@` (INT) : Number of threads
 - `-b` (FILE) : List containing path to the sorted BAM files to merge
-- `<onput.sam>` : Name of the output BAM file (ex: L001_merged.bam)
+- `<onput.bam>` : Name of the output BAM file (ex: L001_merged.bam)
+
+
+**Quality assessment**
+
+Get merged alignment statistics
+
+```
+qualimap bamqc [-outdir quality] [-bam <file.bam>] [-gff <annotaion.gff>][-c] [-nt nThread] [--java-mem-size=8G]
+```
+
+Arguments : 
+
+- `-outdir` (FOLDER) : Number of threads
+- `-bam` (FILE) : Input mapping file in BAM format
+- `-gff` (FILE) : Feature file with regions of interest in GFF
+- `-nt` : Number of threads
+- `--java-mem-size=8G` : Allows 8 Gb of RAM memory 
 
 
 **Get coverage**
