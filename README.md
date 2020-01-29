@@ -1,9 +1,11 @@
 # A Tn-Seq pipeline
-# &lt;include-fragment&gt; element
-### Download Reference genome (FASTA) and annotation (GFF) file
+
+## 1) Getting the reference
+
+Firstly, you need to retrieve your genome of interest and its annotation file
 
 ```
-$ npm install --save @github/include-fragment-element
+bwa index -a bwtsw <genome.fasta>
 ```
 
 ### Convert GFF to human readable table
