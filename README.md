@@ -147,7 +147,7 @@ II          | 1918                    |  98
 
 ### Convert annotation (.gff) to a readble table
 
-Extraction of biotypes (protein_coding,pseudogene, tRNA,rRNA,ncRNA,RNase_P_RNA,mRNA,SRP_RNA) along with their product and their genomic informations.
+Extraction of biotypes (protein_coding,pseudogene, tRNA,rRNA,ncRNA,RNase_P_RNA,mRNA,SRP_RNA) along with their product and  genomic informations.
 
 An exemple gff converted file is provided.
 
