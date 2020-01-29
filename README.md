@@ -12,9 +12,10 @@ Transposon sequencing requires the creation of a transposon insertion library, w
 
 **Input Data**
 
-- A reference genome (.fasta) and it's annotation file (.gff)
+- A reference genome (.fasta) and it's annotation file (.gff). Genomes can be downloaded on [NCBI][ncbi], see [Melitensis 16M][Melitensis_16M] for an exemple.
 
-[Melitensis 16M]: https://www.ncbi.nlm.nih.gov/genome/?term=melitensis%2016M&utm_source=gquery&utm_medium=search
+[ncbi]: https://www.ncbi.nlm.nih.gov/genome/
+[Melitensis_16M]: https://www.ncbi.nlm.nih.gov/genome/?term=melitensis%2016M&utm_source=gquery&utm_medium=search
 
 - Samtools
 - R (tidyverse, data.table, patchwork)
