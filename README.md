@@ -33,7 +33,8 @@ bwa index  [-p prefix] [-a algoType] <genome.fasta>
 ```
 
 Arguments : 
--`-p` (STR) : Prefix of the output database (same as database file name)
+
+- `-p` (STR) : Prefix of the output database (same as database file name)
 - `-a`(STR) : Algorithm for constructing BWT index. Are available **is** and **bwtsw** (recommemded)
 - `<genome.fasta>` : Reference genome 
 
