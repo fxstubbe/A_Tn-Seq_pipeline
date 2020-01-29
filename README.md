@@ -43,9 +43,16 @@ Arguments :
 The BWA-MEM algorithm performs local alignment. It may produce multiple primary alignments for different part of a query sequence. This is a crucial feature for long sequences. However, some tools such as Picard’s markDuplicates does not work with split alignments. One may consider to use option -M to flag shorter split hits as secondary
 
 ```
-bwa mem [-t nThreads] <bwa_index> <Reads> > <output.sam>
+**Independent sequencing reads**
+bwa mem [-t nThreads] <db.prefix> <reads.fq> > <output.sam>
 ```
-bwa mem -t 4",  bwa_index, read_f, ">" , str_replace(read_f, ".fastq", ".sam") ,sep = " ") 
+
+Arguments : 
+
+- `-t` (INT) : Number of threads
+- `<db.prefix>` : Index database outputed at the previous step (**Make a Genomic Index**) 
+- `<Reads.fq>` : Sequencing Reads 
+- `<output.sam>` : Reference genome 
 
 ### Convert GFF to human readable table
 
