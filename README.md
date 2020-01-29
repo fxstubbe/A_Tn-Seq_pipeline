@@ -117,7 +117,7 @@ Arguments :
 - `-outdir` (FOLDER) : Number of threads
 - `-bam` (FILE) : Input mapping file in BAM format
 - `-gff` (FILE) : Feature file with regions of interest in GFF
-- `-nt` : Number of threads
+- `-nt`(INT) : Number of threads
 - `--java-mem-size=8G` : Allows 8 Gb of RAM memory 
 
 
