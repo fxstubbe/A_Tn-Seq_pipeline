@@ -190,9 +190,8 @@ Each gene is assigned a value equal to the count of reads or unique insertions m
 To account for this; 5%, 10%, 15% and 20% of the coding sequence from both the 5′ end and 3′were disraguarded while calculating the insertion index. The internal plot density was plotted on a histogram, which  produces an essential gene peak and a non‐essential gene peak.
 
 ![](https://user-images.githubusercontent.com/43237088/73437231-41477900-434c-11ea-8b25-4152d100bfed.png)
-![](https://user-images.githubusercontent.com/43237088/73464120-b2078900-437e-11ea-99f6-f1412471ec88.png)
 
-The 20% 5'/3'truncation produces the cleanest essential peak
+Increasing genomic sequence truncation increases essential peak resolution, with a binsize equal to 30. Therefore, the essential peak (centered around 0) comprises genes with a maximum index value of 15. Using the 20% end truncation and an Insertion index <= 15, we retrieved 493 essential genes which correspond to 14.63% of the genome.
 
 ![](https://user-images.githubusercontent.com/43237088/73462728-8b485300-437c-11ea-84b6-3a3086f345c0.png)
 
