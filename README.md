@@ -190,6 +190,7 @@ Each gene is assigned a value equal to the count of reads or unique insertions m
 To account for this; 5%, 10%, 15% and 20% of the coding sequence from both the 5′ end and 3′were disraguarded while calculating the insertion index. The internal plot density was plotted on a histogram, which  produces an essential gene peak and a non‐essential gene peak.
 
 ![](https://user-images.githubusercontent.com/43237088/73437231-41477900-434c-11ea-8b25-4152d100bfed.png)
+![](https://user-images.githubusercontent.com/43237088/73464120-b2078900-437e-11ea-99f6-f1412471ec88.png)
 
 The 20% 5'/3'truncation produces the cleanest essential peak
 
