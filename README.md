@@ -189,7 +189,7 @@ Idea :
 
 1. Each gene is assigned a value equal to the count of reads or unique insertions mapped to this gene, divided by the length of the gene. Many essential genes can tolerate insertion in the 3'region, therefore producing truncated but functionnal product. To account for this; 5%, 10%, 15% and 20% of the coding sequence from both the 5′ end and 3′were disraguarded while calculating the insertion index. The internal plot density was plotted on a histogram, which  produces an essential gene peak and a non‐essential gene peak.
 
-![](https://github.com/fxstubbe/A_Tn-Seq_pipeline/files/4133210/Density_insertion.pdf)
+![](https://user-images.githubusercontent.com/43237088/73437231-41477900-434c-11ea-8b25-4152d100bfed.png)
 
 
 2. Classify essentiality based on the peaks
