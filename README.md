@@ -185,14 +185,15 @@ To assess for essentiality of a gene, we used a sliding window approach. Instead
 
 **Working on it!**
 
-Idea : 
+Each gene is assigned a value equal to the count of reads or unique insertions mapped to this gene, divided by the length of the gene. Many essential genes can tolerate insertion in the 3'region, therefore producing truncated but functionnal product. 
 
-1. Each gene is assigned a value equal to the count of reads or unique insertions mapped to this gene, divided by the length of the gene. Many essential genes can tolerate insertion in the 3'region, therefore producing truncated but functionnal product. To account for this; 5%, 10%, 15% and 20% of the coding sequence from both the 5′ end and 3′were disraguarded while calculating the insertion index. The internal plot density was plotted on a histogram, which  produces an essential gene peak and a non‐essential gene peak.
+To account for this; 5%, 10%, 15% and 20% of the coding sequence from both the 5′ end and 3′were disraguarded while calculating the insertion index. The internal plot density was plotted on a histogram, which  produces an essential gene peak and a non‐essential gene peak.
 
 ![](https://user-images.githubusercontent.com/43237088/73437231-41477900-434c-11ea-8b25-4152d100bfed.png)
 
+The 20% 5'/3'truncation produces the cleanest essential peak
 
-2. Classify essentiality based on the peaks
+![](https://user-images.githubusercontent.com/43237088/73462728-8b485300-437c-11ea-84b6-3a3086f345c0.png)
 
 
 ## Make coverage graphs
