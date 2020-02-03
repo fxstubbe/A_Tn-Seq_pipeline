@@ -185,9 +185,9 @@ To assess for essentiality of a gene, we used a sliding window approach. Instead
 
 **Working on it!**
 
-Each gene is assigned an insertion index value equal to the count of reads or unique insertions mapped to this gene, divided by the length of the gene. Many essential genes can tolerate insertion in the 3'region, therefore producing truncated but functionnal product. 
+### Looking for an essential peak
 
-###
+Each gene is assigned an insertion index value equal to the count of reads or unique insertions mapped to this gene, divided by the length of the gene. Many essential genes can tolerate insertion in the 3'region, therefore producing truncated but functionnal product. 
 
 To account for this; 5%, 10%, 15% and 20% of the coding sequence from both the 5′ end and 3′were disraguarded while calculating the insertion index. The internal plot density was plotted on a histogram, which  produces an essential gene peak and a non‐essential gene peak.
 
