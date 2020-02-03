@@ -206,9 +206,8 @@ To account for this; 5%, 10%, 15% and 20% of the coding sequence from both the 5
 ### Genomic discovery
 
 Increasing genomic sequence truncation increases essential peak resolution, with a binsize equal to 30. Therefore, the essential peak (centered around 0) comprises genes with a maximum insertion index value of 15. Using the 20% end truncation and an insertion index <= 15, we retrieved 493 essential genes which correspond to 14.63% of the genome.
-<p align="center">
+
 ![](https://user-images.githubusercontent.com/43237088/73656223-f69d6800-468f-11ea-9bce-e97cfb3dd174.png)
-</p>
 
 ## Make coverage graphs
 
