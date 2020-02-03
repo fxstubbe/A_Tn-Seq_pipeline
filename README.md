@@ -187,13 +187,27 @@ To assess for essentiality of a gene, we used a sliding window approach. Instead
 
 Each gene is assigned an insertion index value equal to the count of reads or unique insertions mapped to this gene, divided by the length of the gene. Many essential genes can tolerate insertion in the 3'region, therefore producing truncated but functionnal product. 
 
+###
+
 To account for this; 5%, 10%, 15% and 20% of the coding sequence from both the 5′ end and 3′were disraguarded while calculating the insertion index. The internal plot density was plotted on a histogram, which  produces an essential gene peak and a non‐essential gene peak.
 
 ![](https://user-images.githubusercontent.com/43237088/73437231-41477900-434c-11ea-8b25-4152d100bfed.png)
 
-Increasing genomic sequence truncation increases essential peak resolution, with a binsize equal to 30. Therefore, the essential peak (centered around 0) comprises genes with a maximum insertion index value of 15. Using the 20% end truncation and an insertion index <= 15, we retrieved 493 essential genes which correspond to 14.63% of the genome.
+### Peak definition, a question of saturation
+
+**Low Saturation**
+
+![](https://user-images.githubusercontent.com/43237088/73656045-9a3a4880-468f-11ea-8dea-9fdff7e54a05.png)
+
+**High Saturation**
 
 ![](https://user-images.githubusercontent.com/43237088/73462728-8b485300-437c-11ea-84b6-3a3086f345c0.png)
+
+### Genomic discovery
+
+Increasing genomic sequence truncation increases essential peak resolution, with a binsize equal to 30. Therefore, the essential peak (centered around 0) comprises genes with a maximum insertion index value of 15. Using the 20% end truncation and an insertion index <= 15, we retrieved 493 essential genes which correspond to 14.63% of the genome.
+
+![](https://user-images.githubusercontent.com/43237088/73656223-f69d6800-468f-11ea-9bce-e97cfb3dd174.png)
 
 
 ## Make coverage graphs
