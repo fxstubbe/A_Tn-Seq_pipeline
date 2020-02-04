@@ -143,41 +143,14 @@ I          | 3                    |  117
 II          | 1917                    |  98
 II          | 1918                    |  98
 
-## The sliding window strategy
 
-### Convert annotation (.gff) to a readble table
+**Convert annotation (.gff) to a readble table**
 
 Extraction of biotypes (protein_coding,pseudogene, tRNA,rRNA,ncRNA,RNase_P_RNA,mRNA,SRP_RNA) along with their product and  genomic informations.
 
 An exemple gff converted file is provided.
 
 **Script** : gff_converter.R
-
-
-### Compute an essentiallity index
-
-To assess for essentiality of a gene, we used a sliding window approach. Instead of counting insertions in genes, we count insertions in overlapping windows of a fixed size.
-
-**Script** : Sliding_window.R
-
-**User defined parameters**  
-
-- `rWindow` : Size of the sliding window
-- `rSliding` : Sliding window shift
-
-**Method** 
-
-1) The coverage file and the converted GFF files are loaded into R.  
-
-2) The coverage file is splitted into chromosomes, which are processed individually.
-
-3) The coverage file is split into coordinates windows matching the `rWindow` and `rSliding` parameters. For exemple, with a rWindow of 200 and a rsliding of 5, a genome of length 3 278 307 bp is split into 655,662 windows. 
-
-4) For each window the sum of aligned reads (coverage) is computed. The logarithm in base 10 is computed for the sum.
-
-5) Each annotated gene in the converted GFF file is assigned an essentiallity index. The index corresponds to the number of empty (0 insertion) window overlaping (even by 1 nt) the annotated gene. If there are no empty window overlapping a given gene (essentiallity index = 0), the gene is skipped.
-
-6) For each chromosome, a file containing a list of potentially essential genes (essentiallity index > 0) is created. Using an R100, 296 essential genes were found.
 
 
 ## The insertion density approach
@@ -215,6 +188,34 @@ Although this approach can be seen as problematic because it compares insertion 
 Increasing genomic sequence truncation increases essential peak resolution, with a binsize equal to 30. Therefore, the essential peak (centered around 0) comprises genes with a maximum insertion index value of 15. Using the 20% end truncation and an insertion index <= 15, we retrieved 493 essential genes which correspond to 14.63% of the genome.
 
 ![](https://user-images.githubusercontent.com/43237088/73656223-f69d6800-468f-11ea-9bce-e97cfb3dd174.png)
+
+## The sliding window strategy
+
+### Compute an essentiallity index
+
+To assess for essentiality of a gene, we used a sliding window approach. Instead of counting insertions in genes, we count insertions in overlapping windows of a fixed size.
+
+**Script** : Sliding_window.R
+
+**User defined parameters**  
+
+- `rWindow` : Size of the sliding window
+- `rSliding` : Sliding window shift
+
+**Method** 
+
+1) The coverage file and the converted GFF files are loaded into R.  
+
+2) The coverage file is splitted into chromosomes, which are processed individually.
+
+3) The coverage file is split into coordinates windows matching the `rWindow` and `rSliding` parameters. For exemple, with a rWindow of 200 and a rsliding of 5, a genome of length 3 278 307 bp is split into 655,662 windows. 
+
+4) For each window the sum of aligned reads (coverage) is computed. The logarithm in base 10 is computed for the sum.
+
+5) Each annotated gene in the converted GFF file is assigned an essentiallity index. The index corresponds to the number of empty (0 insertion) window overlaping (even by 1 nt) the annotated gene. If there are no empty window overlapping a given gene (essentiallity index = 0), the gene is skipped.
+
+6) For each chromosome, a file containing a list of potentially essential genes (essentiallity index > 0) is created. Using an R100, 296 essential genes were found.
+
 
 ## Make coverage graphs
 
