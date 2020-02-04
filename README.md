@@ -181,7 +181,10 @@ Playing around with binsize and sequence truncation harness the poweer to better
 
 Since hihg saturation Tn-seq results in better essential peak definition, one might think that sequencing a very high number of mutants is preferable. This is true to some extend but has its limits. Indeed, a Tn-seq not saturating enough will fail to resolve low fitness genes, a very high saturation will raise the probability to detect rare variant (Transposon in essential genes) therefore lowering the dectection strength. 
 
-Although this approach can be seen as problematic because it compares insertion densities among genes of varying sizes while ignoring the fact that random variance in insertion densities is higher for smaller genes, it has been successfully used in situations where the insertion densities are high, that is, for mutant libraries with a high level of saturation
+Although this approach can be seen as problematic because it compares insertion densities among genes of varying sizes while ignoring the fact that random variance in insertion densities is higher for smaller genes, it has been successfully used in situations where the insertion densities are high, that is, for mutant libraries with a high level of saturation.
+
+https://genome.cshlp.org/content/19/12/2308
+https://onlinelibrary.wiley.com/doi/full/10.1111/mmi.12686
 
 ### Genomic discovery
 
