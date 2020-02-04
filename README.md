@@ -155,8 +155,6 @@ An exemple gff converted file is provided.
 
 ## The insertion density approach
 
-**Working on it!**
-
 Each gene is assigned an insertion index value equal to the count of reads or unique insertions mapped to this gene, divided by the length of the gene. Many essential genes can tolerate insertion in the 3'region, therefore producing truncated but functionnal product. 
 
 ### Looking for an essential peak
@@ -184,15 +182,18 @@ Since hihg saturation Tn-seq results in better essential peak definition, one mi
 Although this approach can be seen as problematic because it compares insertion densities among genes of varying sizes while ignoring the fact that random variance in insertion densities is higher for smaller genes, it has been successfully used in situations where the insertion densities are high, that is, for mutant libraries with a high level of saturation.
 
 https://genome.cshlp.org/content/19/12/2308
+
 https://onlinelibrary.wiley.com/doi/full/10.1111/mmi.12686
 
-### Genomic discovery
+### Locus identification
 
-Increasing genomic sequence truncation increases essential peak resolution, with a binsize equal to 30. Therefore, the essential peak (centered around 0) comprises genes with a maximum insertion index value of 15. Using the 20% end truncation and an insertion index <= 15, we retrieved 493 essential genes which correspond to 14.63% of the genome.
+Increasing genomic sequence truncation increases essential peak resolution, with a binsize equal to 30. Therefore, the essential peak (centered around 0) comprises genes with a maximum insertion index value of 15. Using the 20% end truncation and an insertion index <= 15, we retrieved 493 essential genes which correspond to 14.63% of the genome. 
 
 ![](https://user-images.githubusercontent.com/43237088/73656223-f69d6800-468f-11ea-9bce-e97cfb3dd174.png)
 
 ## The sliding window strategy
+
+**Working on it!**
 
 ### Compute an essentiallity index
 
