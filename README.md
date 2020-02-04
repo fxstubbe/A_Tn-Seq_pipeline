@@ -180,16 +180,17 @@ To assess for essentiality of a gene, we used a sliding window approach. Instead
 6) For each chromosome, a file containing a list of potentially essential genes (essentiallity index > 0) is created. Using an R100, 296 essential genes were found.
 
 
-
 ## The insertion density approach
 
 **Working on it!**
 
-### Looking for an essential peak
-
 Each gene is assigned an insertion index value equal to the count of reads or unique insertions mapped to this gene, divided by the length of the gene. Many essential genes can tolerate insertion in the 3'region, therefore producing truncated but functionnal product. 
 
-To account for this; 5%, 10%, 15% and 20% of the coding sequence from both the 5′ end and 3′were disraguarded while calculating the insertion index. The internal plot density was plotted on a histogram, which  produces an essential gene peak and a non‐essential gene peak.
+### Looking for an essential peak
+
+To account for trucnated but functionale product ans misannotated start site; 5%, 10%, 15% and 20% of the coding sequence from both the 5′ end and 3′were disraguarded while calculating the insertion index. The internal plot density was plotted on a histogram, which  produces an essential gene peak and a non‐essential gene peak. The point separating the two peaks in the distribution can be used as a cutoff value where genes with lower insertion densities are considered essential whereas genes with higher insertion densities are assigned putative non-essential status. In our approach, the first histogram on the distribution is defined as the essential peak.
+
+Playing around with binsize and sequence truncation harness the poweer to better define the essential from non essential peaks. 
 
 ![](https://user-images.githubusercontent.com/43237088/73437231-41477900-434c-11ea-8b25-4152d100bfed.png)
 
@@ -202,6 +203,12 @@ To account for this; 5%, 10%, 15% and 20% of the coding sequence from both the 5
 **High Saturation**
 
 ![](https://user-images.githubusercontent.com/43237088/73462728-8b485300-437c-11ea-84b6-3a3086f345c0.png)
+
+**Sequencing note**
+
+Since hihg saturation Tn-seq results in better essential peak definition, one might think that sequencing a very high number of mutants is preferable. This is true to some extend but has its limits. Indeed, a Tn-seq not saturating enough will fail to resolve low fitness genes, a very high saturation will raise the probability to detect rare variant (Transposon in essential genes) therefore lowering the dectection strength. 
+
+Although this approach can be seen as problematic because it compares insertion densities among genes of varying sizes while ignoring the fact that random variance in insertion densities is higher for smaller genes, it has been successfully used in situations where the insertion densities are high, that is, for mutant libraries with a high level of saturation
 
 ### Genomic discovery
 
