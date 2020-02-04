@@ -182,8 +182,14 @@ Since hihg saturation Tn-seq results in better essential peak definition, one mi
 Although this approach can be seen as problematic because it compares insertion densities among genes of varying sizes while ignoring the fact that random variance in insertion densities is higher for smaller genes, it has been successfully used in situations where the insertion densities are high, that is, for mutant libraries with a high level of saturation.
 
 https://genome.cshlp.org/content/19/12/2308
-
 https://onlinelibrary.wiley.com/doi/full/10.1111/mmi.12686
+
+
+### Locus identification
+
+Increasing genomic sequence truncation increases essential peak resolution, with a binsize equal to 30. Therefore, the essential peak (centered around 0) comprises genes with a maximum insertion index value of 15. Using the 20% end truncation and an insertion index <= 15, we retrieved 493 essential genes which correspond to 14.63% of the genome. 
+
+![](https://user-images.githubusercontent.com/43237088/73656223-f69d6800-468f-11ea-9bce-e97cfb3dd174.png)
 
 
 ## The sliding window strategy
@@ -233,9 +239,3 @@ The scripts require the coverage file and the list of potentially essential gene
 **Output example** 
 
 ![](https://user-images.githubusercontent.com/43237088/73352315-2237e100-4291-11ea-9353-d1c435a9c44b.png)
-
-### Locus identification
-
-Increasing genomic sequence truncation increases essential peak resolution, with a binsize equal to 30. Therefore, the essential peak (centered around 0) comprises genes with a maximum insertion index value of 15. Using the 20% end truncation and an insertion index <= 15, we retrieved 493 essential genes which correspond to 14.63% of the genome. 
-
-![](https://user-images.githubusercontent.com/43237088/73656223-f69d6800-468f-11ea-9bce-e97cfb3dd174.png)
