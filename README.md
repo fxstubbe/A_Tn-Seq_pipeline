@@ -219,7 +219,7 @@ To assess for essentiality of a gene, we used a sliding window approach. Instead
 
 
 
-![](images/Fre_density_R100.png)
+![](Images/Fre_density_R100.png)
 
 5) Each annotated gene in the converted GFF file is assigned an essentiallity index. The index corresponds to the number of empty (0 insertion) window overlaping (even by 1 nt) the annotated gene. If there are no empty window overlapping a given gene (essentiallity index = 0), the gene is skipped.
 
